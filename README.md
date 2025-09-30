@@ -1,0 +1,1 @@
+# Hackaton-SECOMP-2025---MAGALU
