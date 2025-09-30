@@ -1,10 +1,10 @@
-# TeamPomodoro 🌱⏱️
+# TeamPomodoro 
 
 Um aplicativo web colaborativo que transforma o **Pomodoro** em uma experiência **social e gamificada**.
 
 ---
 
-## 🎯 Desafio
+## Desafio
 
 Como ajudar estudantes a manter o **foco e engajamento** nos estudos?
 
@@ -12,7 +12,7 @@ Como ajudar estudantes a manter o **foco e engajamento** nos estudos?
 - Estudar em grupo mantém a motivação, mas muitas vezes dispersa.
 - Pausas são necessárias, mas podem virar distrações longas.
 
-## 💡 Nossa Solução
+## Nossa Solução
 
 O **TeamPomodoro** é um app web que permite que estudantes:
 
@@ -23,18 +23,18 @@ O **TeamPomodoro** é um app web que permite que estudantes:
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-- ✅ **Salas de foco** (grupo de até 6 pessoas).
-- ✅ **Timer sincronizado** via WebSockets.
-- ✅ **Detecção de troca de aba/janela** → se alguém sair, o grupo é notificado.
-- ✅ **Gamificação coletiva**: pontos, badges e ranking.
-- ✅ **Break interativo**: quizzes, jogos curtos ou exercícios de respiração.
-- ✅ **Histórico de produtividade** individual e coletivo.
+-  **Salas de foco** (grupo de até 6 pessoas).
+-  **Timer sincronizado** via WebSockets.
+-  **Detecção de troca de aba/janela** → se alguém sair, o grupo é notificado.
+-  **Gamificação coletiva**: pontos, badges e ranking.
+-  **Break interativo**: quizzes, jogos curtos ou exercícios de respiração.
+-  **Histórico de produtividade** individual e coletivo.
 
 ---
 
-## 🏗️ Arquitetura
+##  Arquitetura
 
 - **Frontend**: React/Next.js (responsivo, mobile-first).
 - **Backend**: Node.js + WebSockets, rodando em **VM na Magalu Cloud**.
@@ -51,7 +51,7 @@ Usuário → Frontend (React) → API (Node.js) → DB (Postgres)
 
 ---
 
-## 🎮 Dinâmica do Break
+##  Dinâmica do Break
 
 - **Mini-quiz rápido**: 3 perguntas de conhecimento geral.
 - **Desafio coletivo**: todos clicam juntos para “encher a barra”.
@@ -59,7 +59,7 @@ Usuário → Frontend (React) → API (Node.js) → DB (Postgres)
 
 ---
 
-## 🔒 Estratégia de Foco (mesmo no Web)
+##  Estratégia de Foco (mesmo no Web)
 
 - O app entra em **fullscreen** no início do ciclo.
 - Se o usuário **trocar de aba ou minimizar**, o sistema registra como “perda de foco”.
