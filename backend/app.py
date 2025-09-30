@@ -6,14 +6,14 @@ from flask_socketio import SocketIO, emit
 import time
 from threading import Thread
 import threading
-
+import time
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")  # * apenas para teste
 
 # Mock de servidores disponíveis
 AVAILABLE_SERVERS = {
-    "pipoca": {"name": "Servidor Pipoca", "host": "10.0.0.10", "port": 9000, "members": {}},
-    "x": {"name": "Servidor X", "host": "10.0.0.5", "port": 1234, "members": {}},
+    "pipoca": {"name": "Servidor Pipoca", "host": "10.0.0.10", "port": 9000, "members": {}, "start_time": time.time()},
+    "x": {"name": "Servidor X", "host": "10.0.0.5", "port": 1234, "members": {}, "start_time": time.time()},
 }
 sessions = {}
 # dicionário para mapear session_id -> sid
@@ -96,6 +96,10 @@ def call_break_server(server_id):
             socketio.emit("message", {"msg": msg}, to=sid)
 
     return jsonify({"ok": True, "message": f"Mensagem de break enviada para todos os usuários do servidor '{server_id}'."})
+
+@app.route("/list_servers", methods=["GET"])
+def list_servers():
+    return jsonify(AVAILABLE_SERVERS)
 
 @socketio.on("connect")
 def handle_connect():
