@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    // Recuperar o nome do usuário do localStorage
+    const storedName = localStorage.getItem("userName");
+    if (storedName) {
+      setUserName(storedName);
+    }
+  }, []);
+
   const salas = [
     {
       id: "estrela",
@@ -36,9 +47,19 @@ const Index = () => {
               <span className="text-4xl">🍎</span>
             </div>
           </div>
+          
           <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
             FocoEstudo
           </h1>
+          
+          {userName && (
+            <div className="mb-6">
+              <p className="text-2xl font-semibold text-foreground">
+                Bem-vindo, <span className="text-primary">{userName}</span>! 👋
+              </p>
+            </div>
+          )}
+          
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Potencialize seus estudos com o método Pomodoro em grupo. 
             Foque, descanse e conquiste suas metas educacionais.
@@ -74,8 +95,10 @@ const Index = () => {
                 <CardTitle>Estude em Grupo</CardTitle>
               </div>
               <CardDescription className="text-base">
-                Junte-se a salas públicas de estudo e compartilhe seu progresso com outros estudantes. 
-                Juntos somos mais fortes! 🚀
+                {userName 
+                  ? `${userName}, junte-se a salas públicas de estudo e compartilhe seu progresso com outros estudantes. Juntos somos mais fortes! 🚀`
+                  : "Junte-se a salas públicas de estudo e compartilhe seu progresso com outros estudantes. Juntos somos mais fortes! 🚀"
+                }
               </CardDescription>
             </CardHeader>
           </Card>
