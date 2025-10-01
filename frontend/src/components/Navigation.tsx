@@ -6,7 +6,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const links = [
-    { to: "/", icon: Home, label: "Início" },
+    { to: "/inicial", icon: Home, label: "Início" },
     { to: "/ranking", icon: Trophy, label: "Ranking" },
     { to: "/respiracao", icon: Wind, label: "Respiração" },
   ];
@@ -19,7 +19,7 @@ const Navigation = () => {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center">
               <span className="text-xl">🍎</span>
             </div>
-            <span className="font-bold text-lg">FocoEstudo</span>
+            <span className="font-bold text-lg">Pomofocus</span>
           </div>
 
           <div className="flex gap-2">
