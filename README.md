@@ -52,7 +52,7 @@ O **PomoFocus** é um app web que permite que estudantes:
 
 ##  Estratégia de Foco (mesmo no Web)
 
-- O app entra em **fullscreen** no início do ciclo.
+- O app entra em uma sala no início do ciclo.
 - Se o usuário **trocar de aba ou minimizar**, o sistema registra como “perda de foco”.
 - O grupo é **notificado em tempo real**.
 - O “medidor coletivo de foco” cai se houver muitas interrupções.
