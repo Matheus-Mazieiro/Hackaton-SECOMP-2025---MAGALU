@@ -42,12 +42,6 @@ O **PomoFocus** é um app web que permite que estudantes:
   - VM para hospedar backend
   - Escalabilidade para lidar com múltiplas salas de estudo simultâneas.
 
-```
-Usuário → Frontend (React) → API (Node.js) → DB (Postgres)
-                             ↑
-                         WebSockets
-```
-
 ---
 
 ##  Dinâmica do Break
@@ -64,6 +58,11 @@ Usuário → Frontend (React) → API (Node.js) → DB (Postgres)
 - O “medidor coletivo de foco” cai se houver muitas interrupções.
 
 ---
+
+## Rodar o Frontend
+- No diretório frontend
+- npm run dev
+
 <!--
 
 ## ⚙️ Estrutura do Projeto (exemplo)
