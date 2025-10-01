@@ -1,4 +1,4 @@
-# Team Foco Estudo!
+# PomoFocus
 
 Um aplicativo web colaborativo que transforma o **Pomodoro** em uma experiência **social e gamificada**.
 
@@ -14,33 +14,32 @@ Como ajudar estudantes a manter o **foco e engajamento** nos estudos?
 
 ## Nossa Solução
 
-O **TeamPomodoro** é um app web que permite que estudantes:
+O **PomoFocus** é um app web que permite que estudantes:
 
 1. **Entrem em salas de estudo virtuais.**
 2. **Façam ciclos Pomodoro em conjunto.**
-3. Nos **momentos de pausa**, participem de **mini-jogos coletivos** (quiz rápido, desafios simples, guia de respiração).
-4. **Gamifiquem o foco**: pontos individuais e de equipe, rankings semanais e feedback em tempo real.
+3. Nos **momentos de pausa**, participem de um guia de respiração
+4. **Gamifiquem o foco**
 
 ---
 
 ## Funcionalidades
 
--  **Salas de foco** (grupo de até 6 pessoas).
--  **Timer sincronizado** via WebSockets.
--  **Detecção de troca de aba/janela** → se alguém sair, o grupo é notificado.
--  **Gamificação coletiva**: pontos, badges e ranking.
--  **Break interativo**: quizzes, jogos curtos ou exercícios de respiração.
--  **Histórico de produtividade** individual e coletivo.
+-  **Salas de foco** 
+-  **Timer sincronizado** 
+-  **Detecção de troca de aba/janela** 
+-  **Gamificação coletiva**
+-  **Break interativo**
+-  **Ranking de produtividade** 
 
 ---
 
 ##  Arquitetura
 
-- **Frontend**: React/Next.js (responsivo, mobile-first).
-- **Backend**: Node.js + WebSockets, rodando em **VM na Magalu Cloud**.
-- **Banco de Dados**: PostgreSQL (hospedado na VM).
+- **Frontend**: React 
+- **Backend**: Python + WebSockets, rodando em **VM na Magalu Cloud**.
 - **Magalu Cloud**:
-  - VM para hospedar backend + DB.
+  - VM para hospedar backend
   - Escalabilidade para lidar com múltiplas salas de estudo simultâneas.
 
 ```
@@ -53,9 +52,7 @@ Usuário → Frontend (React) → API (Node.js) → DB (Postgres)
 
 ##  Dinâmica do Break
 
-- **Mini-quiz rápido**: 3 perguntas de conhecimento geral.
-- **Desafio coletivo**: todos clicam juntos para “encher a barra”.
-- **Relax guiado**: 1min de respiração animada.
+- **Relax guiado**: Respiração animada.
 
 ---
 
