@@ -15,7 +15,7 @@ const NomeUsuario = () => {
       localStorage.setItem("userName", nome.trim());
       
       // Redirecionar para a página inicial
-      navigate("/");
+      navigate("/inicial");
     }
   };
 

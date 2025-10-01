@@ -22,8 +22,8 @@ const AppContent = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/user" element={<NomeUsuario />} />
+      <Route path="/inicial" element={<Index />} />
+      <Route path="/" element={<NomeUsuario />} />
       <Route path="/ranking" element={<Ranking />} />
       <Route path="/descansar" element={<Descanse />} />            
       <Route path="/respiracao" element={<Respiracao />} />
