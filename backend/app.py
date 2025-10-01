@@ -7,7 +7,10 @@ import time
 from threading import Thread
 import threading
 import time
+from flask_cors import CORS 
+
 app = Flask(__name__)
+CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")  # * apenas para teste
 
 # Mock de servidores disponíveis

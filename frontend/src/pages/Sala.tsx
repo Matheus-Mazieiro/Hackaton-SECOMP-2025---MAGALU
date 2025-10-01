@@ -9,9 +9,10 @@ const Sala = () => {
   
   // Mock data for rooms
   const salas = {
-    "estrela": { emoji: "🌟", title: "Sala Estrela", pessoas: 3, tempoFoco: 25, tempoDescanso: 5 },
+    "demon_slayer_22": { emoji: "🌟", title: "Sala Demon Slayer", pessoas: 3, tempoFoco: 25, tempoDescanso: 5 },
     "lua": { emoji: "🌙", title: "Sala Lua", pessoas: 5, tempoFoco: 25, tempoDescanso: 5 },
-    "arco-iris": { emoji: "🌈", title: "Sala Arco-íris", pessoas: 2, tempoFoco: 25, tempoDescanso: 5 },
+    "pipoca": { emoji: "🍿", title: "Sala Pipoca", pessoas: 2, tempoFoco: 25, tempoDescanso: 5 },
+    "magalu": { emoji: "🧩", title: "Sala Magalu", pessoas: 2, tempoFoco: 25, tempoDescanso: 5 },
   };
 
   const sala = salas[id as keyof typeof salas];
