@@ -7,13 +7,18 @@ import time
 from threading import Thread
 import threading
 import time
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")  # * apenas para teste
 
 # Mock de servidores disponíveis
 AVAILABLE_SERVERS = {
     "pipoca": {"name": "Servidor Pipoca", "host": "10.0.0.10", "port": 9000, "members": {}, "start_time": time.time()},
-    "x": {"name": "Servidor X", "host": "10.0.0.5", "port": 1234, "members": {}, "start_time": time.time()},
+    "demon_slayer_22": {"name": "Servidor Demon Slayer 22", "host": "10.0.0.5", "port": 1234, "members": {}, "start_time": time.time()},
+    "lua": {"name": "Lua", "host": "10.0.0.5", "port": 1235, "members": {}, "start_time": time.time()},
+    "magalu": {"name": "Magalu", "host": "10.0.0.5", "port": 1236, "members": {}, "start_time": time.time()},
 }
 sessions = {}
 # dicionário para mapear session_id -> sid
@@ -126,14 +131,21 @@ def send_to_user(session_id, msg):
     else:
         print(f"Usuário com session_id {session_id} não está conectado")
 
-def break_loop(server_id="pipoca", interval=10):
+def break_loop(server_id="pipoca", interval=(25, 5)):
     while True:
-        msg = f"Hora do break no servidor '{server_id}'! ⏰"
+        msg = f"Hora do break em '{server_id}'! ⏰"
         for session_id, sid in USER_CONNECTIONS.items():
             user_session = sessions.get(session_id)
             if user_session and user_session["server"] == server_id:
                 socketio.emit("message", {"msg": msg}, to=sid)
-        time.sleep(interval)
+        time.sleep(interval[0])
+        msg = f"Hora do foco em '{server_id}'! ⏰"
+        for session_id, sid in USER_CONNECTIONS.items():
+            user_session = sessions.get(session_id)
+            if user_session and user_session["server"] == server_id:
+                socketio.emit("message", {"msg": msg}, to=sid)
+        time.sleep(interval[1])
+
 threading.Thread(target=break_loop, daemon=True).start()
 
 
