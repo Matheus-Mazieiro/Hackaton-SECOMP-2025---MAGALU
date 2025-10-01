@@ -11,6 +11,7 @@ import Sala from "./pages/Sala";
 import NotFound from "./pages/NotFound";
 import { TimerProvider } from "./components/timerContext";
 import { usePageVisibility } from "./hooks/usePageVisibility";
+import NomeUsuario from "./pages/User";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,8 @@ const AppContent = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Index />} />
+      <Route path="/inicial" element={<Index />} />
+      <Route path="/" element={<NomeUsuario />} />
       <Route path="/ranking" element={<Ranking />} />
       <Route path="/descansar" element={<Descanse />} />            
       <Route path="/respiracao" element={<Respiracao />} />

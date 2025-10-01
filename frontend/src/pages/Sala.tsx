@@ -60,7 +60,8 @@ const Sala = () => {
       </header>
 
       <main className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-12">
+        {/* Cabeçalho da sala */}
+        <div className="flex items-center justify-center mb-12">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
               <span className="text-4xl">{sala.emoji}</span>
@@ -73,14 +74,20 @@ const Sala = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          <Card className="p-8 shadow-2xl">
+        {/* Cronômetro centralizado */}
+        <div className="flex flex-col items-center justify-center min-h-[60vh]">
+          <Card className="p-12 shadow-2xl max-w-md w-full">
             <div className="text-center">
-              <div className="text-7xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <div className="text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                 {formatarTempo(tempoRestante)}
               </div>
-              <div className="text-muted-foreground">
-                Descanso de {sala.tempoDescanso} minutos
+              <div className="text-muted-foreground text-lg">
+                {tempoRestante > sala.tempoDescanso * 60 
+                  ? `Foco de ${sala.tempoFoco} minutos`
+                  : `Descanso de ${sala.tempoDescanso} minutos`
+                }
               </div>
             </div>
           </Card>

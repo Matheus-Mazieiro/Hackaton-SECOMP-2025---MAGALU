@@ -1,4 +1,4 @@
-# TeamPomodoro 
+# Team Foco Estudo!
 
 Um aplicativo web colaborativo que transforma o **Pomodoro** em uma experiência **social e gamificada**.
 
