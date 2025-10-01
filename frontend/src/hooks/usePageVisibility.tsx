@@ -2,20 +2,28 @@ import { useState, useEffect } from 'react';
 
 export const usePageVisibility = () => {
   const [isVisible, setIsVisible] = useState(true);
-  let cont = 0;
+  const [leaveCount, setLeaveCount] = useState(0);
   
   useEffect(() => {
+    // Recuperar contador do localStorage ao inicializar
+    const savedCount = localStorage.getItem('pageLeaveCount');
+    if (savedCount) {
+      setLeaveCount(parseInt(savedCount));
+    }
+
     const handleVisibilityChange = () => {
       const visible = !document.hidden;
       setIsVisible(visible);
       
-      // Aqui está o print no terminal
       if (visible) {
         console.log('✅ Usuário voltou para a aba');
       } else {
         console.log('🚪 Usuário saiu da aba');
-        cont += 1;
-        console.log(`Número de vezes que o usuário saiu da aba: ${cont}`);
+        const newCount = leaveCount + 1;
+        setLeaveCount(newCount);
+        // Salvar no localStorage para persistência
+        localStorage.setItem('pageLeaveCount', newCount.toString());
+        console.log(`Número de vezes que o usuário saiu da aba: ${newCount}`);
       }
     };
 
@@ -24,7 +32,7 @@ export const usePageVisibility = () => {
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, []);
+  }, [leaveCount]);
 
-  return isVisible;
+  return { isVisible, leaveCount };
 };
